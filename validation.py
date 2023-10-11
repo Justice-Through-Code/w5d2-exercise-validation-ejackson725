@@ -1,8 +1,23 @@
 
 # 1.1 TODO: Create a function called validate_user_input that will
+def validate_user_input():
+    while True:
+        try: 
+            
 # - ask the user for a number: 'Please enter a number'
+            ask_num = int(input('Please enter a number'))
 # - try to return the user's input as an integer
-# - if the user did not input a number, tell them 'You did not enter a valid number, please try again'
+            if type(ask_num) != int:
+                continue
+            else:
+                break
+        except ValueError:
+            print('You did not enter a valid number, please try again')
+    return ask_num
+# - if the user did not input a number, 
+
+
+# tell them 'You did not enter a valid number, please try again'
 # - continue to ask them for a valid number until they input one
 # - once a valid number is received, return that number
 
@@ -17,6 +32,12 @@
 
 
 # 2.1 TODO: Create a function called print_tenth_item that will
+def print_tenth_item(top_ten): 
+    try:
+        print(f'{top_ten [9]}')
+    except IndexError:
+        print('N/A')
+      
 # - take in a list of items as a parameter called `top_ten`
 # - try to print out an f-string stating the 10th item in the list (NOTE: what index is the 10th item in the list?)
 # - if there are not ten items in the list, tell the user that it is not applicable: 'N/A'
